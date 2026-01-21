@@ -31,6 +31,8 @@ app.get("/api/health", (_req, res) => {
   res.json({ status: "ok" });
 });
 
-app.listen(PORT, () => {
-  console.log(`✔ Formulary Nudge API running on http://localhost:${PORT}`);
+const LISTEN_PORT = process.env.PORT || PORT;
+
+app.listen(LISTEN_PORT, () => {
+  console.log(`✔ Formulary Nudge API running on port ${LISTEN_PORT}`);
 });
