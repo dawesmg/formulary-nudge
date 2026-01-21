@@ -1,0 +1,16 @@
+{
+  "org_id": "ORG_001",
+  "alert_types": {
+    "formulary_substitution": {
+      "enabled": true,
+      "severity": "hard-stop",
+      "timing": [
+        "prescribing"
+      ],
+      "display_contexts": [
+        "order-entry"
+      ],
+      "governance_required": true
+    }
+  }
+}

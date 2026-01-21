@@ -1,0 +1,197 @@
+[
+  {
+    "anchor_rxcui": "104491",
+    "anchor_name": "simvastatin 20 MG Oral Tablet [Zocor]",
+    "anchor_tty": "SBD",
+    "substitutes": [
+      {
+        "rxcui": "312961",
+        "name": "simvastatin 20 MG Oral Tablet",
+        "tty": "SCD"
+      }
+    ],
+    "severity_override": "informational",
+    "evidence_nuggets": [
+      {
+        "id": "N1",
+        "title": "Cheaper",
+        "detail": "test text"
+      },
+      {
+        "id": "N2",
+        "title": "Improves adherence",
+        "detail": "lower cost improves adherence"
+      },
+      {
+        "id": "N3",
+        "title": "Improves outcomes",
+        "detail": "increased adherence increase beneficial outcomes "
+      }
+    ],
+    "status": "authorized",
+    "updated_at": "2026-01-20T22:45:32.197Z",
+    "authorized_by": "Martin",
+    "authorized_at": "2026-01-20T22:45:32.197Z"
+  },
+  {
+    "anchor_rxcui": "801095",
+    "anchor_name": "NDA020983 60 ACTUAT albuterol 0.09 MG/ACTUAT Metered Dose Inhaler [Ventolin]",
+    "anchor_tty": "SBD",
+    "substitutes": [
+      {
+        "rxcui": "801092",
+        "name": "NDA020983 60 ACTUAT albuterol 0.09 MG/ACTUAT Metered Dose Inhaler",
+        "tty": "SCD"
+      }
+    ],
+    "evidence_nuggets": [
+      {
+        "id": "N1",
+        "title": "Cheaper",
+        "detail": "Testing that this part of the program saves....."
+      },
+      {
+        "id": "N2",
+        "title": "Improves adherence",
+        "detail": "better than powder"
+      },
+      {
+        "id": "N3",
+        "title": "Improves outcomes",
+        "detail": ""
+      }
+    ],
+    "status": "draft",
+    "updated_at": "2026-01-20T18:36:08.794Z"
+  },
+  {
+    "anchor_rxcui": "855635",
+    "anchor_name": "diclofenac sodium 0.01 MG/MG Topical Gel [Voltaren]",
+    "anchor_tty": "SBD",
+    "substitutes": [
+      {
+        "rxcui": "855633",
+        "name": "diclofenac sodium 0.01 MG/MG Topical Gel",
+        "tty": "SCD"
+      }
+    ],
+    "evidence_nuggets": [
+      {
+        "id": "N1",
+        "title": "Cheaper",
+        "detail": "it is cheaper and so compliance is more likely and testing save"
+      },
+      {
+        "id": "N2",
+        "title": "Improves adherence",
+        "detail": ""
+      },
+      {
+        "id": "N3",
+        "title": "Improves outcomes",
+        "detail": ""
+      }
+    ],
+    "status": "draft",
+    "updated_at": "2026-01-20T18:54:20.623Z"
+  },
+  {
+    "anchor_rxcui": "1738139",
+    "anchor_name": "acetaminophen 325 MG Oral Capsule [Tylenol]",
+    "anchor_tty": "SBD",
+    "substitutes": [
+      {
+        "rxcui": "798926",
+        "name": "acetaminophen 325 MG Oral Tablet [Tactinal]",
+        "tty": "SBD"
+      }
+    ],
+    "severity_override": "informational",
+    "evidence_nuggets": [
+      {
+        "id": "N1",
+        "title": "Cheaper",
+        "detail": ""
+      },
+      {
+        "id": "N2",
+        "title": "Improves adherence",
+        "detail": ""
+      },
+      {
+        "id": "N3",
+        "title": "Improves outcomes",
+        "detail": ""
+      }
+    ],
+    "status": "authorized",
+    "updated_at": "2026-01-21T19:48:30.833Z",
+    "authorized_by": "Martin",
+    "authorized_at": "2026-01-21T19:48:30.833Z"
+  },
+  {
+    "anchor_rxcui": "208220",
+    "anchor_name": "simvastatin 5 MG Oral Tablet [Zocor]",
+    "anchor_tty": "SBD",
+    "substitutes": [
+      {
+        "rxcui": "312962",
+        "name": "simvastatin 5 MG Oral Tablet",
+        "tty": "SCD"
+      }
+    ],
+    "severity_override": "informational",
+    "evidence_nuggets": [
+      {
+        "id": "N1",
+        "title": "Cheaper",
+        "detail": "teettetet2qiwuye'dfoiaju'i"
+      },
+      {
+        "id": "N2",
+        "title": "Improves adherence",
+        "detail": ""
+      },
+      {
+        "id": "N3",
+        "title": "Improves outcomes",
+        "detail": ""
+      }
+    ],
+    "status": "authorized",
+    "updated_at": "2026-01-21T18:04:33.457Z",
+    "authorized_by": "Martin",
+    "authorized_at": "2026-01-21T18:04:33.457Z"
+  },
+  {
+    "anchor_rxcui": "1855524",
+    "anchor_name": "0.8 ML adalimumab 100 MG/ML Prefilled Syringe [Humira]",
+    "anchor_tty": "SBD",
+    "substitutes": [
+      {
+        "rxcui": "2627725",
+        "name": "0.8 ML adalimumab-atto 50 MG/ML Prefilled Syringe [Amjevita]",
+        "tty": "SBD"
+      }
+    ],
+    "evidence_nuggets": [
+      {
+        "id": "N1",
+        "title": "1.\tProven Clinical Equivalence",
+        "detail": "There is a wealth of evidence of the clinical equivalence of biosimilars from randomized controlled trials (RCTs) and systematic reviews. \n\nIn one of the most recent and comprehensive systematic reviews of RCTs biosimilars met equivalence with reference biologics in terms of ACR20 response (24 RCTs with 10 259 patients; RR, 1.01; 95% CrI, 0.98 to 1.04; τ2 = 0.000) and change of HAQ-DI scores (14 RCTs with 5579 patients; SMD, −0.04; 95% CrI, −0.11 to 0.02; τ2 = 0.002) considering prespecified margins of equivalence. Trial sequential analysis found evidence for equivalence for ACR20 since 2017 and HAQ-DI since 2016. Overall, biosimilars were associated with similar safety and immunogenicity profiles compared with reference biologics(Ascef et al. 2023) . This strong evidence base ensures prescribers can confidently recommend biosimilars without compromising patient outcomes. The safety profile of biosimilars has also been shown to be similar to reference products in post marketing studies(Nikitina et al. 2025) . \nThis is not to say that automatically switching all patients to biosimilar is appropriate or recommended. Switching is not without risk and pharmacists should be following patients who switch to biosimilar closely during the transition period, to monitor for signs of flares/loss of disease control(Jankowska et al. 2025) .\n"
+      },
+      {
+        "id": "N2",
+        "title": "2.\tCost Savings for Patients and the Health System",
+        "detail": "Biosimilars reduce costs substantially for both patients and healthcare systems. Although biologics account for approximately 2% of all US prescriptions, they represent almost 40% ($120 billion) of prescription drug spending(Kvien et al. 2022).  Biosimilars are generally priced lower than their reference biologics, leading to substantial cost savings. These savings benefit both patients (through reduced out-of-pocket expenses) and healthcare systems (through lower drug acquisition costs). This leads to savings with biosimilars ranging from 44% to 69% compared to the price of the reference drug. Patients prescribed an infliximab biosimilar ultimately paid 12% less out of pocket than with the reference biologic(Socal et al. 2020). Use of less expensive biosimilars could save the US health system $54 billion over a decade(Mulcahy et al. 2018) ."
+      },
+      {
+        "id": "N3",
+        "title": "3.\tReduced Prior Authorization Barriers",
+        "detail": "Although head-to-head studies on prior authorization rejection rates are limited, real-world transition programs provide strong indirect evidence. One in four Medicare beneficiaries with rheumatoid arthritis (RA) use high-cost biologic disease modifying drugs (DMARDs), and spending for these drugs has risen sharply for Medicare Part D. All plans from 50 states and Washington DC covered at least 1 biologic DMARD, but the vast majority required Prior Authorization (97%)(Yazdany et al. 2015) . In one large-scale program shifting patients from Humira to biosimilars, 91% of patients remained on biosimilars three months post-transition, with minimal therapy gaps and no meaningful increase in adverse events (Arzt et al. 2025) . These findings suggest payer alignment with biosimilars reduces delays and administrative hurdles, thereby improving patient access."
+      }
+    ],
+    "status": "draft",
+    "updated_at": "2026-01-21T22:13:13.181Z"
+  }
+]
