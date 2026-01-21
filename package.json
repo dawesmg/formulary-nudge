@@ -5,9 +5,11 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    
     "api": "node server/server.js",
     "ui": "vite",
-    "dev": "npm-run-all --parallel api ui"
+    "dev": "npm-run-all --parallel api ui",
+     "start": "node server/server.js"
   },
   "keywords": [],
   "author": "",
