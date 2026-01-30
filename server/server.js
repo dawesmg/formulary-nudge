@@ -9,13 +9,33 @@ import rxnormRoutes from "./routes/rxnorm.js";
 const app = express();
 const PORT = 3001;
 
+const ALLOWED_ORIGINS = new Set([
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
+  "https://formulary-nudge.vercel.app",
+  // add your Vercel preview URL(s) if you use them
+]);
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin(origin, cb) {
+      // allow non-browser tools like curl/postman (no Origin header)
+      if (!origin) return cb(null, true);
+
+      // allow exact known origins
+      if (ALLOWED_ORIGINS.has(origin)) return cb(null, true);
+
+      // allow any Vercel preview URL: https://<something>.vercel.app
+      if (/^https:\/\/.+\.vercel\.app$/.test(origin)) return cb(null, true);
+
+      return cb(new Error(`CORS blocked for origin: ${origin}`), false);
+    },
     methods: ["GET", "POST", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "x-admin-key", "x-actor"],
+    credentials: false,
   })
 );
+
 
 app.options(/.*/, cors());
 app.use(express.json());
