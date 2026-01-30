@@ -2,8 +2,10 @@ import { useState } from "react";
 import OrgPolicyPage from "./pages/OrgPolicyPage.jsx";
 import MappingEditorPage from "./pages/MappingEditorPage.jsx";
 import ReviewPage from "./pages/ReviewPage.jsx";
-import MappingMatchPage from "./pages/MappingMatchPage.jsx";
+import PrescribingPage from "./pages/PrescribingPage";
 
+
+import Icd10LookupLab from "./pages/Icd10LookupLab.jsx";
 
 const tabs = [
   { key: "match", label: "Prescribing" },
@@ -17,14 +19,11 @@ const tabs = [
 export default function App() {
   const [tab, setTab] = useState("policy");
 
+
   return (
     <div style={{ maxWidth: 1100, margin: "24px auto", padding: "0 16px" }}>
-      <h1 style={{ margin: "0 0 10px 0" }}>Formulary Nudge</h1>
-<p style={{ fontSize: 13, opacity: 0.75, marginBottom: 16, lineHeight: 1.4 }}>
-  Organisation policy defines how and when formulary substitution suggestions are generated,
-  how strongly they are presented to clinicians, and whether additional governance or approval
-  is required before deployment into clinical systems.
-</p>
+      
+
 
       <div style={{ display: "flex", gap: 8, marginBottom: 16, flexWrap: "wrap" }}>
         {tabs.map((t) => (
@@ -46,6 +45,7 @@ export default function App() {
           </button>
         ))}
       </div>
+{tab === "icd10" && <Icd10LookupLab />}
 
            {tab === "policy" && <OrgPolicyPage />}
 
@@ -66,7 +66,7 @@ export default function App() {
         />
       )}
 
-      {tab === "match" && <MappingMatchPage />}
+      {tab === "match" && <PrescribingPage />}
 
     </div>
   );

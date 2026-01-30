@@ -3,6 +3,7 @@ import { getMappings, saveMapping, deleteMapping } from "../api/mappingsClient";
 import { getOrgPolicy } from "../api/orgPolicyClient";
 import { getOutput } from "../api/outputClient";
 import RxNormSearchPicker from "../components/RxNormSearchPicker";
+import Icd10ConditionPicker from "../components/Icd10ConditionPicker.jsx";
 
 // ---- Severity gradient helpers (ONE source of truth) ----
 const SEVERITY_GRADIENTS = {
@@ -61,8 +62,9 @@ export default function MappingEditorPage({ onNavigate }) {
 const [conditionMode, setConditionMode] = useState("any"); // "any" | "all"
 const [conditionsEnabled, setConditionsEnabled] = useState(false);
 const [includeConditions, setIncludeConditions] = useState([]); // array of strings
-const [excludeConditions, setExcludeConditions] = useState([]); // array of strings
 const [conditionDraft, setConditionDraft] = useState("");
+const [includeIcd10, setIncludeIcd10] = useState([]);
+
 
   // Keep evidence array sized to evidenceCount
   useEffect(() => {
@@ -162,7 +164,6 @@ const [conditionDraft, setConditionDraft] = useState("");
       setConditionsEnabled(false);
       setConditionMode("any");
       setIncludeConditions([]);
-      setExcludeConditions([]);
       setConditionDraft("");
       return;
     }
@@ -173,16 +174,14 @@ const [conditionDraft, setConditionDraft] = useState("");
     setSelectedSubstitute(subs.length > 0 ? subs[0] : null);
     // ✅ load conditions if present
     const cond = selected.conditions || null;
-    if (cond && (Array.isArray(cond.include) || Array.isArray(cond.exclude))) {
+    if (cond && (Array.isArray(cond.include))) {
       setConditionsEnabled(true);
       setConditionMode(cond.mode === "all" ? "all" : "any");
       setIncludeConditions(Array.isArray(cond.include) ? cond.include : []);
-      setExcludeConditions(Array.isArray(cond.exclude) ? cond.exclude : []);
     } else {
       setConditionsEnabled(false);
       setConditionMode("any");
       setIncludeConditions([]);
-      setExcludeConditions([]);
     }
     setConditionDraft("");
 
@@ -250,9 +249,8 @@ const [conditionDraft, setConditionDraft] = useState("");
     setConditionsEnabled(false);
     setConditionMode("any");
     setIncludeConditions([]);
-    setExcludeConditions([]);
     setConditionDraft("");
-    
+
     setEvidenceCount(3);
     setEvidenceNuggets([
       { id: "N1", title: "Cheaper", detail: "" },
@@ -288,7 +286,6 @@ const [conditionDraft, setConditionDraft] = useState("");
      ? {
       mode: conditionMode,
       include: includeConditions,
-      exclude: excludeConditions,
     }
     : undefined,
 
@@ -516,9 +513,9 @@ const [conditionDraft, setConditionDraft] = useState("");
   <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
     <div style={{ fontSize: 13, fontWeight: 900 }}>Condition-dependent nudge</div>
 
-    <label style={{ marginLeft: "auto", fontSize: 12, display: "flex", alignItems: "center", gap: 8 }}>
+    <label style={{ fontSize: 12, display: "flex", alignItems: "left", gap: 8 }}>
       <input
-        type="checkbox"
+        type="checkbox" 
         checked={conditionsEnabled}
         onChange={(e) => setConditionsEnabled(e.target.checked)}
       />
@@ -532,182 +529,11 @@ const [conditionDraft, setConditionDraft] = useState("");
   </div>
 
   {conditionsEnabled && (
-    <>
-      <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap", marginBottom: 10 }}>
-        <label style={{ fontSize: 12 }}>
-          Match mode&nbsp;
-          <select
-            value={conditionMode}
-            onChange={(e) => setConditionMode(e.target.value)}
-            style={{ padding: 6, borderRadius: 8, border: "1px solid #ccc", marginLeft: 6 }}
-          >
-            <option value="any">any (recommended)</option>
-            <option value="all">all</option>
-          </select>
-        </label>
-
-        <div style={{ fontSize: 11, opacity: 0.7 }}>
-          “Any” = at least one include condition present. “All” = every include condition present.
-        </div>
-      </div>
-
-      <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 10 }}>
-        <input
-          value={conditionDraft}
-          onChange={(e) => setConditionDraft(e.target.value)}
-          placeholder="Add include condition (e.g., Rheumatoid arthritis)"
-          style={{
-            flex: 1,
-            padding: 8,
-            borderRadius: 10,
-            border: "1px solid #ccc",
-            fontSize: 13,
-          }}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              e.preventDefault();
-              const v = conditionDraft.trim();
-              if (!v) return;
-              setIncludeConditions((prev) => (prev.includes(v) ? prev : [...prev, v]));
-              setConditionDraft("");
-            }
-          }}
-        />
-        <button
-          type="button"
-          onClick={() => {
-            const v = conditionDraft.trim();
-            if (!v) return;
-            setIncludeConditions((prev) => (prev.includes(v) ? prev : [...prev, v]));
-            setConditionDraft("");
-          }}
-          style={{
-            padding: "8px 12px",
-            borderRadius: 10,
-            border: "1px solid #0070f3",
-            background: "#0070f3",
-            color: "white",
-            cursor: "pointer",
-            fontSize: 13,
-            fontWeight: 800,
-          }}
-        >
-          Add
-        </button>
-      </div>
-
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-        <div style={{ border: "1px solid #eee", borderRadius: 10, padding: 10, background: "#fcfcfc" }}>
-          <div style={{ fontSize: 12, fontWeight: 900, marginBottom: 8 }}>Include</div>
-          {includeConditions.length === 0 ? (
-            <div style={{ fontSize: 12, opacity: 0.7 }}>No include conditions.</div>
-          ) : (
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {includeConditions.map((c) => (
-                <div
-                  key={c}
-                  style={{
-                    display: "flex",
-                    gap: 10,
-                    alignItems: "center",
-                    border: "1px solid #eee",
-                    borderRadius: 10,
-                    padding: "8px 10px",
-                    background: "white",
-                  }}
-                >
-                  <div style={{ fontSize: 13, fontWeight: 800 }}>{c}</div>
-                  <button
-                    type="button"
-                    onClick={() => setIncludeConditions((prev) => prev.filter((x) => x !== c))}
-                    style={{
-                      marginLeft: "auto",
-                      padding: "4px 8px",
-                      borderRadius: 8,
-                      border: "1px solid #ddd",
-                      background: "white",
-                      cursor: "pointer",
-                      fontSize: 12,
-                      fontWeight: 800,
-                    }}
-                  >
-                    Remove
-                  </button>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <div style={{ border: "1px solid #eee", borderRadius: 10, padding: 10, background: "#fcfcfc" }}>
-          <div style={{ fontSize: 12, fontWeight: 900, marginBottom: 8 }}>Exclude (optional)</div>
-          <div style={{ fontSize: 11, opacity: 0.7, marginBottom: 8 }}>
-            If any exclude condition is present, the nudge will not fire.
-          </div>
-
-          <button
-            type="button"
-            onClick={() => {
-              const v = prompt("Add exclude condition (free text):");
-              const t = (v || "").trim();
-              if (!t) return;
-              setExcludeConditions((prev) => (prev.includes(t) ? prev : [...prev, t]));
-            }}
-            style={{
-              padding: "6px 10px",
-              borderRadius: 10,
-              border: "1px solid #555",
-              background: "white",
-              cursor: "pointer",
-              fontSize: 12,
-              fontWeight: 800,
-              marginBottom: 10,
-            }}
-          >
-            + Add exclude condition
-          </button>
-
-          {excludeConditions.length === 0 ? (
-            <div style={{ fontSize: 12, opacity: 0.7 }}>No exclude conditions.</div>
-          ) : (
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {excludeConditions.map((c) => (
-                <div
-                  key={c}
-                  style={{
-                    display: "flex",
-                    gap: 10,
-                    alignItems: "center",
-                    border: "1px solid #eee",
-                    borderRadius: 10,
-                    padding: "8px 10px",
-                    background: "white",
-                  }}
-                >
-                  <div style={{ fontSize: 13, fontWeight: 800 }}>{c}</div>
-                  <button
-                    type="button"
-                    onClick={() => setExcludeConditions((prev) => prev.filter((x) => x !== c))}
-                    style={{
-                      marginLeft: "auto",
-                      padding: "4px 8px",
-                      borderRadius: 8,
-                      border: "1px solid #ddd",
-                      background: "white",
-                      cursor: "pointer",
-                      fontSize: 12,
-                      fontWeight: 800,
-                    }}
-                  >
-                    Remove
-                  </button>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    </>
+    <Icd10ConditionPicker
+      label="Include ICD-10-CM"
+      selectedCodes={includeIcd10}
+      onChangeCodes={setIncludeIcd10}
+    />
   )}
 </div>
 

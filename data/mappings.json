@@ -1,39 +1,5 @@
 [
   {
-    "anchor_rxcui": "104491",
-    "anchor_name": "simvastatin 20 MG Oral Tablet [Zocor]",
-    "anchor_tty": "SBD",
-    "substitutes": [
-      {
-        "rxcui": "312961",
-        "name": "simvastatin 20 MG Oral Tablet",
-        "tty": "SCD"
-      }
-    ],
-    "severity_override": "informational",
-    "evidence_nuggets": [
-      {
-        "id": "N1",
-        "title": "Cheaper",
-        "detail": "test text"
-      },
-      {
-        "id": "N2",
-        "title": "Improves adherence",
-        "detail": "lower cost improves adherence"
-      },
-      {
-        "id": "N3",
-        "title": "Improves outcomes",
-        "detail": "increased adherence increase beneficial outcomes "
-      }
-    ],
-    "status": "authorized",
-    "updated_at": "2026-01-20T22:45:32.197Z",
-    "authorized_by": "Martin",
-    "authorized_at": "2026-01-20T22:45:32.197Z"
-  },
-  {
     "anchor_rxcui": "801095",
     "anchor_name": "NDA020983 60 ACTUAT albuterol 0.09 MG/ACTUAT Metered Dose Inhaler [Ventolin]",
     "anchor_tty": "SBD",
@@ -61,39 +27,10 @@
         "detail": ""
       }
     ],
-    "status": "draft",
-    "updated_at": "2026-01-20T18:36:08.794Z"
-  },
-  {
-    "anchor_rxcui": "855635",
-    "anchor_name": "diclofenac sodium 0.01 MG/MG Topical Gel [Voltaren]",
-    "anchor_tty": "SBD",
-    "substitutes": [
-      {
-        "rxcui": "855633",
-        "name": "diclofenac sodium 0.01 MG/MG Topical Gel",
-        "tty": "SCD"
-      }
-    ],
-    "evidence_nuggets": [
-      {
-        "id": "N1",
-        "title": "Cheaper",
-        "detail": "it is cheaper and so compliance is more likely and testing save"
-      },
-      {
-        "id": "N2",
-        "title": "Improves adherence",
-        "detail": ""
-      },
-      {
-        "id": "N3",
-        "title": "Improves outcomes",
-        "detail": ""
-      }
-    ],
-    "status": "draft",
-    "updated_at": "2026-01-20T18:54:20.623Z"
+    "status": "authorized",
+    "updated_at": "2026-01-24T19:45:04.278Z",
+    "authorized_by": "Martin",
+    "authorized_at": "2026-01-24T19:45:04.278Z"
   },
   {
     "anchor_rxcui": "1738139",
@@ -164,6 +101,115 @@
     "authorized_at": "2026-01-21T18:04:33.457Z"
   },
   {
+    "anchor_rxcui": "855635",
+    "anchor_name": "diclofenac sodium 0.01 MG/MG Topical Gel [Voltaren]",
+    "anchor_tty": "SBD",
+    "substitutes": [
+      {
+        "rxcui": "855633",
+        "name": "diclofenac sodium 0.01 MG/MG Topical Gel",
+        "tty": "SCD"
+      }
+    ],
+    "evidence_nuggets": [
+      {
+        "id": "N1",
+        "title": "Cheaper",
+        "detail": "it is cheaper and so compliance is more likely and testing save"
+      },
+      {
+        "id": "N2",
+        "title": "Improves adherence",
+        "detail": ""
+      },
+      {
+        "id": "N3",
+        "title": "Improves outcomes",
+        "detail": ""
+      }
+    ],
+    "conditions": {
+      "mode": "any",
+      "include_icd10": [
+        "M15.0"
+      ]
+    },
+    "status": "draft",
+    "updated_at": "2026-01-24T01:54:02.973Z"
+  },
+  {
+    "anchor_rxcui": "104376",
+    "anchor_name": "lisinopril 5 MG Oral Tablet [Zestril]",
+    "anchor_tty": "SBD",
+    "substitutes": [
+      {
+        "rxcui": "311354",
+        "name": "lisinopril 5 MG Oral Tablet",
+        "tty": "SCD"
+      }
+    ],
+    "severity_override": "informational",
+    "evidence_nuggets": [
+      {
+        "id": "N1",
+        "title": "Cheaper",
+        "detail": ""
+      },
+      {
+        "id": "N2",
+        "title": "Improves adherence",
+        "detail": ""
+      },
+      {
+        "id": "N3",
+        "title": "Improves outcomes",
+        "detail": ""
+      }
+    ],
+    "conditions": {
+      "mode": "any",
+      "include_icd10": [
+        "I10"
+      ]
+    },
+    "status": "draft",
+    "updated_at": "2026-01-24T01:58:52.384Z"
+  },
+  {
+    "anchor_rxcui": "104491",
+    "anchor_name": "simvastatin 20 MG Oral Tablet [Zocor]",
+    "anchor_tty": "SBD",
+    "substitutes": [
+      {
+        "rxcui": "312961",
+        "name": "simvastatin 20 MG Oral Tablet",
+        "tty": "SCD"
+      }
+    ],
+    "severity_override": "warning",
+    "evidence_nuggets": [
+      {
+        "id": "N1",
+        "title": "Cheaper",
+        "detail": "test text"
+      },
+      {
+        "id": "N2",
+        "title": "Improves adherence",
+        "detail": "lower cost improves adherence"
+      },
+      {
+        "id": "N3",
+        "title": "Improves outcomes",
+        "detail": "increased adherence increase beneficial outcomes "
+      }
+    ],
+    "status": "authorized",
+    "updated_at": "2026-01-29T18:22:21.885Z",
+    "authorized_by": "Martin",
+    "authorized_at": "2026-01-29T18:22:21.885Z"
+  },
+  {
     "anchor_rxcui": "1855524",
     "anchor_name": "0.8 ML adalimumab 100 MG/ML Prefilled Syringe [Humira]",
     "anchor_tty": "SBD",
@@ -174,6 +220,7 @@
         "tty": "SBD"
       }
     ],
+    "severity_override": "recommendation",
     "evidence_nuggets": [
       {
         "id": "N1",
@@ -191,7 +238,44 @@
         "detail": "Although head-to-head studies on prior authorization rejection rates are limited, real-world transition programs provide strong indirect evidence. One in four Medicare beneficiaries with rheumatoid arthritis (RA) use high-cost biologic disease modifying drugs (DMARDs), and spending for these drugs has risen sharply for Medicare Part D. All plans from 50 states and Washington DC covered at least 1 biologic DMARD, but the vast majority required Prior Authorization (97%)(Yazdany et al. 2015) . In one large-scale program shifting patients from Humira to biosimilars, 91% of patients remained on biosimilars three months post-transition, with minimal therapy gaps and no meaningful increase in adverse events (Arzt et al. 2025) . These findings suggest payer alignment with biosimilars reduces delays and administrative hurdles, thereby improving patient access."
       }
     ],
+    "conditions": {
+      "mode": "any",
+      "include": []
+    },
+    "status": "authorized",
+    "updated_at": "2026-01-30T01:25:28.682Z",
+    "authorized_by": "Martin",
+    "authorized_at": "2026-01-30T01:25:28.682Z"
+  },
+  {
+    "anchor_rxcui": "104375",
+    "anchor_name": "lisinopril 2.5 MG Oral Tablet [Zestril]",
+    "anchor_tty": "SBD",
+    "substitutes": [
+      {
+        "rxcui": "311353",
+        "name": "lisinopril 2.5 MG Oral Tablet",
+        "tty": "SCD"
+      }
+    ],
+    "evidence_nuggets": [
+      {
+        "id": "N1",
+        "title": "Cheaper",
+        "detail": ""
+      },
+      {
+        "id": "N2",
+        "title": "Improves adherence",
+        "detail": ""
+      },
+      {
+        "id": "N3",
+        "title": "Improves outcomes",
+        "detail": ""
+      }
+    ],
     "status": "draft",
-    "updated_at": "2026-01-21T22:13:13.181Z"
+    "updated_at": "2026-01-30T01:27:03.093Z"
   }
 ]
