@@ -1,4 +1,4 @@
-const API = "http://localhost:3001"; // keep for now so we avoid proxy confusion
+const API = import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";
 
 export async function authorizeMapping(anchor_rxcui, { adminKey, actor, reason } = {}) {
   const controller = new AbortController();
